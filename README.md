@@ -1,15 +1,13 @@
 # Project - BeeMilkTea
-### [Bee-milktea.herokuapp.com](http://bee-milktea.herokuapp.com/)
 
-I built this web application using Django, SQLite3, Javascript and Bootstrap.
-#### short demo video: https://www.youtube.com/watch?v=Tux4C7zjBn8
+We built this web application using Django, SQLite3, Javascript and Bootstrap.
 
 ## Short description of the application:
 - This application is for selling cool tea, coffee and drinks. It has a very user-friendly interface.
 - Images in this app serve for non-profit/business purpose.
 
 ### Homepage	
-![](https://i.imgur.com/ce5sTzp.jpg)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/homepage.JPG)
 
 
 ## Features of the website for administrators (used easily by any non-technical admins):
