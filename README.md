@@ -16,7 +16,7 @@ We built this web application using Django, SQLite3, Javascript and Bootstrap.
 - Edit the existing items (changing info or/and picture) via the web application
 
 ### Add and Edit a product
-![](https://i.imgur.com/B9oLvTN.jpg)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/newProduct.JPG)
 
 
 ## Features of the website for user (suits the eyes of the customers):
@@ -27,10 +27,10 @@ We built this web application using Django, SQLite3, Javascript and Bootstrap.
 - Checkout and view order info
 
 ### Login
-![](https://i.imgur.com/eUbvBhZ.jpg)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/login.JPG)
 
 ### Register
-![](https://i.imgur.com/ecYa8Ng.jpg)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/register.JPG)
 
 ### Shopping cart
-![](https://i.imgur.com/wTF1ymg.jpg)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/cart.JPG)
