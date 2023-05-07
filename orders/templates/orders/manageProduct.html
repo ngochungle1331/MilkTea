@@ -12,7 +12,7 @@
 {% block main %}
 
 <div class="container pb-5 bg-light">
-  <h3 class="text-center mt-3">New product</h3>
+  <h3 class="text-center mt-3">Thêm sản phẩm mới</h3>
   {% if messages %}
   {% for message in messages %}
   {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
@@ -30,92 +30,92 @@
       {% csrf_token %}
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label for="productName">Product name</label>
-          <input type="text" class="form-control" id="productName" name="productName" placeholder="Matcha Boba Tea" value="" required>
+          <label for="productName">Tên sản phẩm</label>
+          <input type="text" class="form-control" id="productName" name="productName" placeholder="" value="" required>
           <div class="invalid-feedback">
-            Valid product name is required.
+            Bạn cần nhập tên sản phẩm.
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="category">Category</label>
+          <label for="category">Phân loại</label>
           <select class="custom-select d-block w-100" id="category" name="category" required>
-            <option value="">Choose...</option>
-            <option value="MILK TEA">MILK TEA</option>
-            <option value="SODA">SODA</option>
-            <option value="FRESH MILK">FRESH MILK</option>
-            <option value="FRUIT TEA">FRUIT TEA</option>
-            <option value="JUNK FOOD">JUNK FOOD</option>
-            <option value="OTHER DRINK">OTHER DRINK</option>
+            <option value="">Chọn...</option>
+            <option value="MILK TEA">Trà sữa</option>
+            <option value="SODA">Soda</option>
+            <option value="FRESH MILK">Sữa tươi</option>
+            <option value="FRUIT TEA">Nước trái cây</option>
+            <option value="JUNK FOOD">Nước giải khát</option>
+            <option value="OTHER DRINK">Đồ uống khác</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid category.
+            Bạn cần chọn phân loại sản phẩm.
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 mb-3">
-          <label for="price_basic">Basic Price (€) per unit</label>
-          <input type="number" class="form-control" id="price_basic" name="price_basic" placeholder="13.75" step="0.01" min="0" required>
+          <label for="price_basic">Đơn giá (VND)</label>
+          <input type="number" class="form-control" id="price_basic" name="price_basic" placeholder="" step="0.01" min="0" required>
           <div class="invalid-feedback">
-            Valid product price is required.
+            Bạn cần nhập đơn giá.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="unit">Unit</label>
-          <input type="text" class="form-control" id="unit" name="unit" placeholder="cup" maxlength="8" required>
+          <label for="unit">Đơn vị tính</label>
+          <input type="text" class="form-control" id="unit" name="unit" placeholder="" maxlength="8" required>
           <div class="invalid-feedback">
-            Valid product unit is required.
+            Bạn cần nhập đơn vị tính.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="availablity">Availablity</label>
+          <label for="availablity">Trạng thái</label>
           <select class="custom-select d-block w-100" id="availablity" name="availablity" required>
-            <option value="">Choose...</option>
-            <option value="available">available</option>
-            <option value="unavailable">unavailable</option>
-            <option value="comming soon">comming soon</option>
+            <option value="">Chọn...</option>
+            <option value="available">Đã có</option>
+            <option value="unavailable">Chưa có</option>
+            <option value="comming soon">Sắp có</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid availablity.
+            Bạn cần chọn trạng thái sản phẩm.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="quantity">Quantity</label>
+          <label for="quantity">Số lượng</label>
           <input type="number" class="form-control" id="quantity" name="quantity" placeholder="" min="0" required>
           <div class="invalid-feedback">
-            Valid product quantity is required.
+            Bạn cần nhập số lượng sản phẩm.
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-8 mb-3">
-          <label for="description_short">Short description</label>
-          <input type="text" class="form-control" id="description_short" name="description_short" placeholder="This is a sweet and fresh milk tea" maxlength="64" required>
+          <label for="description_short">Mô tả ngắn</label>
+          <input type="text" class="form-control" id="description_short" name="description_short" placeholder="" maxlength="64" required>
           <div class="invalid-feedback">
-            Please enter a short description about the product.
+            Bạn cần nhập mô tả ngắn cho sản phẩm.
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="form-group">
-            <label for="product_image">Upload product image</label>
+            <label for="product_image">Thêm ảnh sản phẩm</label>
             <input type="file" class="form-control-file" id="product_image" name="product_image" accept="image/*" required>
           </div>
           <div class="invalid-feedback">
-            Please upload a valid image
+            Vui lòng chọn ảnh hợp lệ.
           </div>
         </div>
       </div>
       <div class="mb-3">
-        <label for="description_long">Long description</label>
-        <input type="text" class="form-control" id="description_long" name="description_long" placeholder="Write a long description about product" required>
+        <label for="description_long">Mô tả chi tiết</label>
+        <input type="text" class="form-control" id="description_long" name="description_long" placeholder="" required>
         <div class="invalid-feedback">
-          Please enter a long description about the product.
+          Bạn cần nhập mô tả chi tiết cho sản phẩm.
         </div>
       </div>
       <hr class="mb-4">
       <input type="hidden" name="upload_type" class="upload_type" value="upload">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Upload product information</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Thêm sản phẩm</button>
     </form>
   </div>
 </div>
@@ -143,7 +143,7 @@
                   <form action="/productEdit" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="product_id" class="product_id" value="{{ item.id }}">
-                    <button type="submit" class="btn btn-primary"> Edit product</a></button>
+                    <button type="submit" class="btn btn-primary"> Sửa thông tin</a></button>
                   </form>
                 </div>
               </div>
