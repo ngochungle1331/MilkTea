@@ -28,12 +28,18 @@ body {
   z-index: 1;
 }
 
-/* .search {
-  width: 300px;
-} */
+.brand-name {
+  font: 30px 'Pacifico', cursive;
+  font-size: 24px;
+  font-weight: 600;
+}
 
 .search-field {
   border-radius: 20px;
+}
+
+.search-field:hover {
+  background-color: rgb(238, 238, 102) !important; 
 }
 
 .search-field-button {
@@ -166,7 +172,7 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+  /* -moz-appearance: textfield; */
   text-align: center;
 }
 
@@ -372,7 +378,7 @@ section .section-title {
     -webkit-transform-style: preserve-3d;
     -ms-transition: 1s;
     -moz-transition: 1s;
-    -moz-transform: perspective(1000px);
+    /* -moz-transform: perspective(1000px); */
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     transition: 1s;
