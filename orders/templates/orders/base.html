@@ -33,14 +33,14 @@
       <div class="">
         <a class="navbar-brand" href="/">
           <img class="d-inline" style="width: 40px; height: 40px;" src="{% static 'orders/images/logo.png' %}">
-          <span class="blue d-inline brand-name"> BeeMilkTea</span>
+          <span class="blue d-inline brand-name"> BeeMilkTea </span>
         </a>
       </div>
       <div class="d-flex align-items-center">
         <form class="form-inline my-2 my-lg-0" action="/search" method="post">
           {% csrf_token %}
           <div class="input-group search">
-            <input class="form-control btn-outline-dark search-field" type="text" placeholder="Search" name="query" aria-label="Search" required>
+            <input class="form-control btn-outline-dark search-field" type="text" placeholder="Tìm kiếm" name="query" aria-label="Search" required>
             <div class="input-group-append">
               <button class="btn btn-outline-dark bg-white border-left-0 search-field-button" type="submit"><i class="fas fa-search fa-lg"></i></button>
             </div>
@@ -50,7 +50,7 @@
       <div class="d-flex align-items-center">
         {% if not user.is_superuser %}
         <div class="cart-icon mr-3">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal"><i class="fas fa-cart-plus fa-lg"></i><span class="cart-lable"> Your Cart</span></a></button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal"><i class="fas fa-cart-plus fa-lg"></i><span class="cart-lable"> Giỏ Hàng </span></a></button>
         </div>
         {% endif %}
         <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
@@ -60,30 +60,30 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown mr-3">
               <a class="nav-link dropdown-toggle btn btn-primary text-white border-0 nav-category" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-list fa-lg"></i> <span class="md-hidden"> Categories</span>
+                <i class="fas fa-list fa-lg"></i> <span class="md-hidden"> Chọn loại</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/"><span class="mb-1 btn-link">ALL PRODUCTS</span></a>
-                <a class="dropdown-item" href="/category/MILK TEA"><span class="mb-1 btn-link">MILK TEA</span></a>
-                <a class="dropdown-item" href="/category/SODA"><span class="mb-1 btn-link">SODA</span></a>
-                <a class="dropdown-item" href="/category/FRESH MILK"><span class="mb-1 btn-link">FRESH MILK</span></a>
-                <a class="dropdown-item" href="/category/FRUIT TEA"><span class="mb-1 btn-link">FRUIT TEA</span></a>
-                <a class="dropdown-item" href="/category/OTHER DRINK"><span class="mb-1 btn-link">OTHER DRINK</span></a>
+                <a class="dropdown-item" href="/"><span class="mb-1 btn-link">Tất cả sản phẩm</span></a>
+                <a class="dropdown-item" href="/category/MILK TEA"><span class="mb-1 btn-link">Trà sữa</span></a>
+                <a class="dropdown-item" href="/category/SODA"><span class="mb-1 btn-link">Soda</span></a>
+                <a class="dropdown-item" href="/category/FRESH MILK"><span class="mb-1 btn-link">Sữa tươi</span></a>
+                <a class="dropdown-item" href="/category/FRUIT TEA"><span class="mb-1 btn-link">Trà trái cây</span></a>
+                <a class="dropdown-item" href="/category/OTHER DRINK"><span class="mb-1 btn-link">Thức uống khác</span></a>
               </div>
             </li>
             {% if user.is_superuser %}
-            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/manageOrder" role="button" aria-expanded="false"><i class="fas fa-sort-alpha-down fa-lg"></i><span class="md-hidden d-inline"> All orders</span></a></li>
-            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/manageProduct" role="button" aria-expanded="false"><i class="fas fa-edit fa-lg"></i><span class="md-hidden d-inline"> Add/edit product</span></a></li>
+            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/manageOrder" role="button" aria-expanded="false"><i class="fas fa-sort-alpha-down fa-lg"></i><span class="md-hidden d-inline"> Tất cả đơn hàng </span></a></li>
+            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/manageProduct" role="button" aria-expanded="false"><i class="fas fa-edit fa-lg"></i><span class="md-hidden d-inline"> Thêm, sửa sản phẩm </span></a></li>
             {% endif %}
             {% if user.is_authenticated %}
               {% if not user.is_superuser %}
-              <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/history" role="button" aria-expanded="false"><i class="far fa-user-circle fa-lg"></i><span class="md-hidden d-inline"> Your Orders</span></a></li>
+              <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/history" role="button" aria-expanded="false"><i class="far fa-user-circle fa-lg"></i><span class="md-hidden d-inline"> Đơn đã mua </span></a></li>
               {% endif %}
-            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/logout" role="button" aria-expanded="false"><i class="fas fa-sign-out-alt fa-lg"></i><span class="md-hidden d-inline"> Log Out</span></a></li>
+            <li class="nav-item mr-3"><a class="btn btn-primary text-white border-0" href="/logout" role="button" aria-expanded="false"><i class="fas fa-sign-out-alt fa-lg"></i><span class="md-hidden d-inline"> Đăng xuất </span></a></li>
             {% else %}
-            <li class="nav-item mr-3"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal"><i class="fas fa-user-plus fa-lg"></i><span class="md-hidden d-inline"> Register</span></a></button></li>
+            <li class="nav-item mr-3"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal"><i class="fas fa-user-plus fa-lg"></i><span class="md-hidden d-inline"> Đăng kí </span></a></button></li>
             <!-- <li class="nav-item"><a class="nav-link" href="/register"><i class="fas fa-user-plus fa-lg"></i> Register</a></li> -->
-            <li class="nav-item mr-3"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-lg"></i><span class="md-hidden d-inline"> Log In</span></a></button></li>
+            <li class="nav-item mr-3"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt fa-lg"></i><span class="md-hidden d-inline"> Đăng nhập </span></a></button></li>
             <!-- <li class="nav-item"><a class="nav-link"><i class="fas fa-sign-in-alt fa-lg"></i> Log In</a></li> -->
             {% endif %}
           </ul>
@@ -103,7 +103,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Login Form</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Form đăng nhập</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -137,10 +137,10 @@
               <input type="password" name="password" class="form-control" placeholder="password" required>
             </div>
             <div class="text-center pb-2">
-              <input type="checkbox" class="mr-3">Remember Me
+              <input type="checkbox" class="mr-3">Nhớ mật khẩu
             </div>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-login">Log In</button>
+              <button type="submit" class="btn btn-login">Đăng nhập</button>
             </div>
           </form>
         </div>
@@ -167,7 +167,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Register Form</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Form đăng kí</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -226,10 +226,10 @@
               </div>
             </div>
             <div class="justify-content-center pb-2 text-center">
-              <input type="checkbox" class="mr-3" required>I agree to the term of use
+              <input type="checkbox" class="mr-3" required>Tôi đồng ý với điều khoản sử dụng
             </div>
             <div class="form-group text-center">
-              <button type="submit" class="btn btn-login">Register</button>
+              <button type="submit" class="btn btn-login">Đăng kí</button>
             </div>
           </form>
         </div>
@@ -238,7 +238,7 @@
             <hr>
           </div>
           <div class="col-4">
-            <p class="text-center">Or</p>
+            <p class="text-center">Hoặc</p>
           </div>
           <div class="col-4">
             <hr>
@@ -257,7 +257,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header pt-2 pb-0 alert-success border-bottom-0">
-          <h3 class="modal-title" id="exampleModalLongTitle">Your Cart</h3>
+          <h3 class="modal-title" id="exampleModalLongTitle">Giỏ hàng</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -268,17 +268,17 @@
               <div class="card-header pt-3 pb-3 pl-0 pr-0 alert-success border-top-0">
                 <div class="d-flex align-items-center">
                   <div class="flex-grow-1 ml-3">
-                    <h5>Total price: <span class="total-price">€0.00</span></h>
+                    <h5>Tổng giá: <span class="total-price">0.00k</span></h>
                     </h5>
                   </div>
                   <div class="pr-2" id="PCheckout">
                     {% if not user.is_authenticated %}
                     <!-- <button type="submit" class="btn btn-login" id="login">Login & Checkout</button> -->
-                    <button type="button" class="btn btn-secondary btn-login mb-3" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login & Checkout</button>
+                    <button type="button" class="btn btn-secondary btn-login mb-3" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Đăng nhập & Thanh toán</button>
                     {% else %}
                     <form action="/" method="post">
                       {% csrf_token %}
-                      <button type="submit" class="btn btn-login">Checkout</button>
+                      <button type="submit" class="btn btn-login">Thanh toán</button>
                     </form>
                     {% endif %}
                   </div>
@@ -290,13 +290,13 @@
               <div class="card-footer shoppingCart-footer">
                 <div class="d-flex align-items-center mt-1">
                   <div class="flex-grow-1">
-                    <h5><b>Total price:</b></h6>
+                    <h5><b>Tổng giá:</b></h6>
                   </div>
                   <div class="ml-1 pl-3">
-                    <h5 class="total-price">€0.00</h5>
+                    <h5 class="total-price">0.00k</h5>
                   </div>
                   <div class="ml-1 pl-3" id="empty-cart">
-                    <p class="btn-link mb-1">Empty cart</p>
+                    <p class="btn-link mb-1">Làm trống giỏ hàng</p>
                   </div>
                 </div>
               </div>
@@ -313,7 +313,7 @@
   <footer class="footer small text-center text-muted mt-3 pb-2 pt-2 bg-warning">
     <div class="row">
       <div class="col-lg-12">
-        <h6 class="mb-2 "><b>Eating to addict. Drinking to remember</b></h6>
+        <h6 class="mb-2 "><b>Ăn để ghiền, uống để nhớ</b></h6>
         <a class="footer-link mr-3" href=""><i class="fab fa-linkedin fa-2x"></i></a>
         <a class="footer-link mr-3" href=""><i class="fas fa-envelope footer-icon fa-2x"></i></a>
         <a class="footer-link mr-3" href=""><i class="fas fa-globe fa-2x"></i></a>

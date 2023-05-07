@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-  Order History
+  Lịch sử đơn hàng
 {% endblock %}
 
 {% block main %}
@@ -22,7 +22,7 @@
     <div class="card-header pt-3 pb-3 pl-0 pr-0">
       <div class="w-100 m-0">
         <div class="d-flex align-items-center justify-content-center">
-          <h3>Your Orders</h3>
+          <h3>Đơn hàng của bạn</h3>
         </div>
       </div>
     </div>
@@ -30,35 +30,35 @@
       {% if not orders %}
       <div class="text-center pt-3 pb-3" id="empty">
         <img style="width: 300px;" src="https://cdn.pixabay.com/photo/2016/07/23/12/54/box-1536798_960_720.png">
-        <h4 class="pt-2">Opps! Seem like you didn't buy anything</h4>
+        <h4 class="pt-2">Có vẻ như bạn chưa mua gì cả!</h4>
         <a class="btn btn-primary text-white border-0 mt-3" href="/" role="button" aria-expanded="false">
           <div class="d-flex justify-items-center">
             <i class="fas fa-cart-plus fa-2x"></i>
-            <h4 class="ml-2">Start shopping now</h4>
+            <h4 class="ml-2">Bắt đầu mua sắm ngay bây giờ</h4>
           </div>
         </a>
       </div>
       {% endif %}
       {% for id, order in orders.items %}
       <div class="border border-info p-0">
-        <h5 class="text-center m-0"><b>Order no.{{ id }}</b> - €{{ order.total_price }} ({{ order.item_count }} items)</h5>
-        <h6 class="text-center">Status: {{ order.status }}</h6>
+        <h5 class="text-center m-0"><b>Đơn số {{ id }}</b> - {{ order.total_price }}k ({{ order.item_count }} items)</h5>
+        <h6 class="text-center">Trạng thái: {{ order.status }}</h6>
         <ul class="list-group m-1">
           {% for item in order.ordered_products %}
           <li class="list-group-item p-0">
             <a href="/item/${item["id"]}"><h6 class="m-0"><b>- {{ item.name }}</b></h6></a>
-            <p class="m-0 pl-2">Quantity: {{ item.quantity }} | Price: €{{ item.price }} (€{{ item.basic_price }}/{{ item.unit }}) | {{ item.user_request }}</p>
+            <p class="m-0 pl-2">Số lượng: {{ item.quantity }} | Giá: {{ item.price }}k ({{ item.basic_price }}k/{{ item.unit }}) | {{ item.user_request }}</p>
           </li>
           {% endfor %}
         </ul>
         <div class="reciever_info ml-2 mb-2">
-          <h6 class="text-center mb-0"><b>Shipping details</b></h6>
-          <p class="m-0">Reciever: {{ order.customer_name }}</p>
-          <p class="m-0">Mobile: {{ order.customer_mobile }}</p>
-          <p class="m-0">Shipping address: {{ order.shipping_address }}</p>
-          <p class="m-0">Ordered on: {{ order.customer_ordered_time }}</p>
+          <h6 class="text-center mb-0"><b>Chi tiết vận chuyển</b></h6>
+          <p class="m-0">Người nhận: {{ order.customer_name }}</p>
+          <p class="m-0">Số điện thoại: {{ order.customer_mobile }}</p>
+          <p class="m-0">Địa chỉ giao hàng: {{ order.shipping_address }}</p>
+          <p class="m-0">Đặt hàng lúc: {{ order.customer_ordered_time }}</p>
           {% if order.delivery_time != None %}
-          <p class="m-0">Order will be deliveried on: {{ order.delivery_time }}</p>
+          <p class="m-0">Đơn hàng sẽ được giao lúc: {{ order.delivery_time }}</p>
           {% endif %}
         </div>
       </div>
@@ -66,7 +66,7 @@
     </div>
     <div class="card-footer">
       <div class="d-flex align-items-center mt-1 mb-3 justify-content-center">
-        <h4 class="text-center m-0">Thank you very much for your orders</h4>
+        <h4 class="text-center m-0">Chân thành cảm ơn các đơn đặt hàng của bạn.</h4>
       </div>
     </div>
   </div>
