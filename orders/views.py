@@ -33,6 +33,7 @@ def list_detail_orders(orders):
             }
         for product in order.ordered_items.all():
                 ordered_product = {
+                "id": product.product.id,
                 "name": product.product.name,
                 "price": product.price_quantity,
                 "quantity": product.quantity,
