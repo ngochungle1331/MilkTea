@@ -67,3 +67,4 @@ class Order(models.Model):
     # decide by administrators
     delivery_time = models.CharField(max_length=32, blank=True, null=True)
     status = models.CharField(max_length=32, choices=STATUS, default='Pending')
+
