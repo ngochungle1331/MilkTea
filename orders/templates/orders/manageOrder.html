@@ -55,12 +55,22 @@
                 <div class="form-group m-0">
                   <label for="status" class="m-0" mt-2>Trạng thái đơn hàng</label>
                   <div class="d-flex justify-content-center">
-                    <select class="selectpicker price-select" data-width="135px" name="status" data-style="btn-success">
+                    <select id='{{order.order_id}}' class="choose_tag selectpicker price-select" data-width="135px" name="status" data-style="btn-success">
                       <option value="Pending">Chờ xác nhận</option>
                       <option value="Prepared">Đã chuẩn bị</option>
                       <option value="Shipping">Đang giao</option>
                       <option value="Delivered">Đã giao</option>
                     </select>
+                    
+                    {% block script %}
+                    {% load static %}
+                    <script type="text/javascript" src="{% static 'orders/js/order.js' %}"></script>
+                    {% endblock %}
+
+                      <script>
+                        // alert('{{order.order_id}}')
+                        select('{{order.order_id}}', '{{order.status}}')
+                      </script>
                   </div>
                 </div>
                 <button class="button-confirm mt-1" type="submit">Cập nhật trạng thái</button>
