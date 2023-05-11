@@ -40,12 +40,12 @@
           <label for="category">Phân loại</label>
           <select class="custom-select d-block w-100" id="category" name="category" required>
             <option value="">Chọn...</option>
-            <option value="MILK TEA">Trà sữa</option>
+            <option value="TRÀ SỮA">Trà sữa</option>
             <option value="SODA">Soda</option>
-            <option value="FRESH MILK">Sữa tươi</option>
-            <option value="FRUIT TEA">Nước trái cây</option>
-            <option value="JUNK FOOD">Nước giải khát</option>
-            <option value="OTHER DRINK">Đồ uống khác</option>
+            <option value="SỮA TƯƠI">Sữa tươi</option>
+            <option value="NƯỚC TRÁI CÂY">Nước trái cây</option>
+            <option value="ĐỒ ĂN VẶT">Đồ ăn vặt</option>
+            <option value="THỨC UỐNG KHÁC">Đồ uống khác</option>
           </select>
           <div class="invalid-feedback">
             Bạn cần chọn phân loại sản phẩm.
@@ -137,7 +137,7 @@
             <div class="card-footer p-0 m-0 border-0 ">
               <div class="d-flex align-items-center bg-light text-success">
                 <div class="flex-grow-1">
-                  <h6>€{{ item.price }}</h6>
+                  <h6>{{ item.price }} VND</h6>
                 </div>
                 <div class="">
                   <form action="/productEdit" method="post">
