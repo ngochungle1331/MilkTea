@@ -7,7 +7,7 @@
 {% block main %}
 
 <div class="container pb-5 bg-light">
-  <h3 class="text-center mt-3">New product</h3>
+  <h3 class="text-center mt-3">Sản phẩm mới</h3>
   {% if messages %}
   {% for message in messages %}
   {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
@@ -25,90 +25,90 @@
       {% csrf_token %}
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label for="productName">Edit product information</label>
+          <label for="productName">Chỉnh sửa thông tin sản phẩm</label>
           <input type="text" class="form-control" id="productName" name="productName" value="{{ product.name }}" required>
           <div class="invalid-feedback">
-            Valid product name is required.
+            Cần nhập tên hợp lệ.
           </div>
         </div>
         <div class="col-md-6 mb-3">
-          <label for="category">Category</label>
+          <label for="category">Danh mục</label>
           <select class="custom-select d-block w-100" id="category" name="category" required>
             <option value="{{ product.category }}">{{ product.category }}</option>
-            <option value="MILK TEA">MILK TEA</option>
+            <option value="MILK TEA">TRÀ SỮA</option>
             <option value="SODA">SODA</option>
-            <option value="FRESH MILK">FRESH MILK</option>
-            <option value="FRUIT TEA">FRUIT TEA</option>
-            <option value="JUNK FOOD">JUNK FOOD</option>
-            <option value="OTHER DRINK">OTHER DRINK</option>
+            <option value="FRESH MILK">SỮA TƯƠI</option>
+            <option value="FRUIT TEA">TRÀ TRÁI CÂY</option>
+            <option value="JUNK FOOD">ĐỒ ĂN VẶT</option>
+            <option value="OTHER DRINK">THỨC UỐNG KHÁC</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid category.
+            Cần nhập danh mục hợp lệ.
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3 mb-3">
-          <label for="price_basic">Basic Price (€) per unit</label>
+          <label for="price_basic">Giá cơ bản (VND) cho 1 đơn vị</label>
           <input type="number" class="form-control" id="price_basic" name="price_basic" value="{{ product.price }}" step="0.01" min="0" required>
           <div class="invalid-feedback">
-            Valid product price is required.
+            Cần nhập giá sản phẩm hợp lệ.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="unit">Unit</label>
+          <label for="unit">Đơn vị</label>
           <input type="text" class="form-control" id="unit" name="unit" value="{{ product.unit }}" maxlength="8" required>
           <div class="invalid-feedback">
-            Valid product unit is required.
+            Cần nhập đơn vị sản phẩm hợp lệ.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="availablity">Availablity</label>
+          <label for="availablity">Khả dụng</label>
           <select class="custom-select d-block w-100" id="availablity" name="availablity" required>
             <option value="{{ product.availability }}">{{ product.availability }}</option>
-            <option value="available">available</option>
-            <option value="unavailable">unavailable</option>
-            <option value="comming soon">comming soon</option>
+            <option value="available">có sẵn</option>
+            <option value="unavailable">không có sẵn</option>
+            <option value="comming soon">sắp ra mắt</option>
           </select>
           <div class="invalid-feedback">
-            Please select a valid availablity.
+            Cần nhập khả dụng hợp lệ.
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="quantity">Quantity</label>
+          <label for="quantity">Số lượng</label>
           <input type="number" class="form-control" id="quantity" name="quantity" value="{{ product.quantity }}" min="0" required>
           <div class="invalid-feedback">
-            Valid product quantity is required.
+            Cần nhập số lượng sản phẩm hợp lệ.
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-8 mb-3">
-          <label for="description_short">Short description</label>
+          <label for="description_short">Mô tả ngắn</label>
           <input type="text" class="form-control" id="description_short" name="description_short" value="{{ product.description_short }}" maxlength="64" required>
           <div class="invalid-feedback">
-            Please enter a short description about the product.
+            Cần nhập mô tả ngắn hợp lệ.
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="form-group">
-            <label for="product_image">Change image (optional)</label>
+            <label for="product_image">Thay đổi hình ảnh (tùy chọn)</label>
             <input type="file" class="form-control-file" id="product_image" name="product_image" accept="image/*">
           </div>
         </div>
       </div>
       <div class="mb-3">
-        <label for="description_long">Long description</label>
+        <label for="description_long">Mô tả đầy đủ</label>
         <input type="text" class="form-control" id="description_long" name="description_long" value="{{ product.description_short }}" required>
         <div class="invalid-feedback">
-          Please enter a long description about the product.
+          Cần nhập mô tả đầy đủ hợp lệ.
         </div>
       </div>
       <hr class="mb-4">
       <input type="hidden" name="product_id" class="product_id" value="{{ product.id }}">
       <input type="hidden" name="upload_type" class="upload_type" value="edit">
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Upload edited product information</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Tải lên thông tin đã chỉnh sửa</button>
     </form>
   </div>
 </div>

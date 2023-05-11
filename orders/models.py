@@ -11,30 +11,29 @@ STATUS = (
 )
 
 CATEGORIES = (
-    ('MILK TEA', 'MILK TEA'),
+    ('TRÀ SỮA', 'TRÀ SỮA'),
     ('SODA', 'SODA'),
-    ('FRESH MILK', 'FRESH MILK'),
-    ('FRUIT TEA', 'FRUIT TEA'),
-    ('JUNK FOOD', 'JUNK FOOD'),
-    ('OTHER DRINK', 'OTHER DRINK')
+    ('SỮA TƯƠI', 'SỮA TƯƠI'),
+    ('TRÀ TRÁI CÂY', 'TRÀ TRÁI CÂY'),
+    ('ĐỒ ĂN VẶT', 'ĐỒ ĂN VẶT'),
+    ('THỨC UỐNG KHÁC', 'THỨC UỐNG KHÁC')
 )
 
 AVAILABILITIES = (
-    ('available', 'available'),
-    ('unavailable', 'unavailable'),
-    ('comming soon', 'comming soon')
+    ('có sẵn', 'có sẵn'),
+    ('không có sẵn', 'không có sẵn'),
+    ('sắp ra mắt', 'sắp ra mắt')
 )
 
 class Product(models.Model):
     name = models.CharField(max_length=64)
-    category = models.CharField(max_length=32, choices=CATEGORIES, default='MILK TEA')
-    # change later for Vietnamese currency
-    price = models.DecimalField(decimal_places=2, max_digits=5)
+    category = models.CharField(max_length=32, choices=CATEGORIES, default='TRÀ SỮA')
+    price = models.IntegerField(default=50000) 
     unit = models.CharField(max_length=10, default='1 ly')
-    availability = models.CharField(max_length=32, choices=AVAILABILITIES, default='available')
+    availability = models.CharField(max_length=32, choices=AVAILABILITIES, default='có sẵn')
     quantity = models.IntegerField()
-    description_short = models.CharField(max_length=64, default='available')
-    description_long = models.TextField(default='available')
+    description_short = models.CharField(max_length=64, default='có sẵn')
+    description_long = models.TextField(default='có sẵn')
     # if not image then use a default image, consider to have a site to let administrators change image and content/description
     image = models.ImageField(verbose_name="Product Image", upload_to="orders/static/orders/images/", default=None, blank=True)
     image_filename = models.CharField(max_length=256, default="image.jpg")

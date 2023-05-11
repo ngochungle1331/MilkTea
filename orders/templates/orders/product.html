@@ -28,9 +28,9 @@
       <div class="invisible" id="data-item" data-item='{{ JSONdata }}'></div>
       <h4 class="mb-3 d-inline text-success"><b>{{ item.name }} </b></h4>
       <p class="text-info pl-1 mb-2">{{ item.description_short }}</p>
-      <h6 class="pl-1 price_basic" data-price='{{ item.price }}'><b>Our price:</b> €{{ item.price }} / {{ item.unit }}</h6>
-      <h6 class="pl-1"><b>Category:</b> {{ item.category }}</h6>
-      <h6 class="pl-1"><b>Type:</b> {{ item.availability }}</h6>
+      <h6 class="pl-1 price_basic" data-price='{{ item.price }}'><b>Giá:</b> {{ item.price }} VND/ {{ item.unit }}</h6>
+      <h6 class="pl-1"><b>Danh mục:</b> {{ item.category }}</h6>
+      <h6 class="pl-1"><b>Loại:</b> {{ item.availability }}</h6>
       <hr>
       <p class="pl-1">{{ item.description_long }}</p>
 
@@ -40,11 +40,11 @@
 
     <div class="col-md-3 bg-light m-0 p-0 customer-needs">
       <div class="w-100 border">
-        <h4 class="m-1 text-center" id="item_QPrice">€{{ item.price }}</h4>
+        <h4 class="m-1 text-center" id="item_QPrice">{{ item.price }} VND</h4>
       </div>
 
       <div class="p-3 text-center">
-        <h6 class="pr-3"><b>Quantity:</b></h6>
+        <h6 class="pr-3"><b>Số lượng :</b></h6>
         <div class="d-flex justify-content-center">
           <button id="minus" class="quantity_left btn btn-outline-dark"><i class="fas fa-minus"></i></button>
           <input id="quantity" class="quantity_middle btn-outline-dark" type="number" value="1" min=1>
@@ -53,26 +53,26 @@
       </div>
 
       <div class="ice pb-3 text-center">
-        <h6 class="pr-3"><b>Do you want ice?</b></h6>
-        <h6 class="pr-3">(If yes, item and ice separated or together?)</h6>
+        <h6 class="pr-3"><b>Bạn có muốn uống đá?</b></h6>
+        <h6 class="pr-3">(Nếu có, thêm đá chung vào sản phẩm hay để riêng ?)</h6>
         <select class="selectpicker ice-type" data-style="btn-info" data-width="150px">
-          <option value="item together with ice" selected="selected">Yes (together)</option>
-          <option value="item separated with ice">Yes (separated)</option>
-          <option value="no ice">No</option>
+          <option value="item together with ice" selected="selected">Có (để chung)</option>
+          <option value="item separated with ice">Có (để riêng)</option>
+          <option value="no ice">Không</option>
         </select>
       </div>
 
       <div class="with-ice pb-3 text-center">
-        <h6 class="pr-3"><b>Amount of ice</b></h6>
+        <h6 class="pr-3"><b>Lượng đá</b></h6>
         <select class="selectpicker ice-amount" data-style="btn-info" data-width="150px">
-          <option value="less ice">less ice</option>
-          <option value="normal" selected>normal</option>
-          <option value="more ice">more ice</option>
+          <option value="less ice">ít đá</option>
+          <option value="normal" selected>bình thường</option>
+          <option value="more ice">nhiều đá</option>
         </select>
       </div>
 
       <div class="ice text-center">
-        <h6 class="pr-3"><b>Extra needs:</b></h6>
+        <h6 class="pr-3"><b>Ghi chú thêm :</b></h6>
         <div class="mr-1 ml-1">
           <input class="w-100 needs-other" type="text" name="needs-other">
         </div>
@@ -83,7 +83,7 @@
 
 
       <div class=" btn-add-to-cart text-center">
-        <button type="button" name="button-cart" id="add-to-cart" class="btn btn-success"><i class="fas fa-cart-plus fa-lg"></i> Add to cart</a></button>
+        <button type="button" name="button-cart" id="add-to-cart" class="btn btn-success"><i class="fas fa-cart-plus fa-lg"></i> Thêm vào giỏ hàng</a></button>
       </div>
 
     </div>

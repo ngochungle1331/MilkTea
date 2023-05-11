@@ -12,7 +12,7 @@ from datetime import datetime
 
 
 # list of categories
-categories = ('MILK TEA', 'SODA', 'FRESH MILK', 'FRUIT TEA', 'JUNK FOOD', 'OTHER DRINK')
+categories = ('TRÀ SỮA', 'SODA', 'SỮA TƯƠI', 'TRÀ TRÁI CÂY', 'ĐỒ ĂN VẶT', 'THỨC UỐNG KHÁC')
 
 def list_detail_orders(orders):
     details = {}
