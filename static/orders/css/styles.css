@@ -253,12 +253,14 @@ input[type=number] {
     width: 200px;
     cursor: pointer;
     border: 2px solid #19547b !important
+    
 }
 
 .btn-register:hover {
     color: #fff;
-    border: none !important;
+    /* border: none !important; */
     background-image: linear-gradient(to right, #ffd89b, #19547b)
+
 }
 
 
@@ -266,8 +268,10 @@ input[type=number] {
   position: relative;
 }
 
+
 .card-text {
   /* display: none !important; */
+  height: 72px;
 }
 
 @media screen and (max-width: 575px) {
