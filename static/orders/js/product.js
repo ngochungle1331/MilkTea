@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var el_quantity = document.getElementById("quantity");
     var quantity = parseInt(el_quantity.value);
     el_quantity.value = quantity + 1;
-    document.getElementById("item_QPrice").innerHTML = "€" + ((quantity + 1)*price_basic).toFixed(2);
+    document.getElementById("item_QPrice").innerHTML =((quantity + 1)*price_basic)+ " VND";
 
   };
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var quantity = el_quantity.value;
     if (quantity > 1) {
       el_quantity.value = quantity - 1;
-      document.getElementById("item_QPrice").innerHTML = "€" + ((quantity - 1)*price_basic).toFixed(2);
+      document.getElementById("item_QPrice").innerHTML = ((quantity - 1)*price_basic) +" VND";
     }
   };
 
@@ -102,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cart = JSON.parse(localStorage.getItem("shoppingCart"));
     document.querySelectorAll(".total-price").forEach(el => {
       if (cart == undefined) {
-        el.innerHTML = `<b>€${price_quantity.toFixed(2)}</b>`;
+        el.innerHTML = `<b>${price_quantity} VND</b>`;
         document.getElementById("PCheckout").style.display = 'block';
       } else {
-        el.innerHTML = `<b>€${cart["total_price"].toFixed(2)}</b>`;
+        el.innerHTML = `<b>${cart["total_price"]} VND</b>`;
         document.getElementById("PCheckout").style.display = 'block';
       }
     });
@@ -125,7 +125,7 @@ function ice() {
 const cartNotification = `
   <div class="popup-notification text-center bg-success text-white">
     <a class="btn-close"><i class="fas fa-times fa-lg"></i></a>
-    <p class="text-center mb-1"><i class="far fa-check-circle checked_icon"></i> Item successfully added to cart</p>
-    <button type="button" class="btn bg-warning" data-toggle="modal" data-target="#cartModal"><i class="fas fa-cart-plus fa-lg"></i> Your Cart</a></button>
+    <p class="text-center mb-1"><i class="far fa-check-circle checked_icon"></i> Thêm vào giỏ hàng thành công</p>
+    <button type="button" class="btn bg-warning" data-toggle="modal" data-target="#cartModal"><i class="fas fa-cart-plus fa-lg"></i> Xem giỏ hàng</a></button>
   </div>
 `;

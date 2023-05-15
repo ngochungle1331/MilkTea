@@ -29,7 +29,7 @@ const renderItemCheckout = (item, item_info) => {
       <div>
         <h6 class="my-0">${item_info["name"]} (${item["quantity"]} ${item_info["unit"]})</h6>
       </div>
-      <span class="text-muted">€${item["price"].toFixed(2)}</span>
+      <span class="text-muted">${item["price"]} VND</span>
     </li>
   `;
   return markup;
@@ -39,8 +39,8 @@ const renderItemCheckout = (item, item_info) => {
 const renderTotalPrice = total_price => {
   const markup = `
     <li class="list-group-item d-flex justify-content-between">
-      <span>Total (EURO)</span>
-      <strong>€${total_price.toFixed(2)}</strong>
+      <span>Total (VND)</span>
+      <strong>${total_price} VND</strong>
     </li>
   `;
   return markup;

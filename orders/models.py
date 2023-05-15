@@ -44,7 +44,7 @@ class Product(models.Model):
 class Ordered_item(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product")
     quantity = models.IntegerField()
-    price_quantity = models.DecimalField(decimal_places=3, max_digits=10)
+    price_quantity = models.IntegerField()
     # customer needs: less ice, more ice. Together with ice or not. Extra comment
     # create a JSON format here
     notice = models.TextField(blank=True)
@@ -60,7 +60,7 @@ class Order(models.Model):
     mobile = models.CharField(max_length=16, blank=True)
     shipping_address = models.TextField(blank=True)
     email = models.CharField(max_length=64, blank=True)
-    total_price = models.DecimalField(decimal_places=2, max_digits=6)
+    total_price = models.IntegerField()
     ordered_time = models.DateTimeField(auto_now_add=True)
     expected_time_request = models.TextField(blank=True)
     # decide by administrators

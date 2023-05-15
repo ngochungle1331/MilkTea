@@ -21,6 +21,10 @@ body {
   color: green;
 }
 
+.padding-top-20px {
+  padding-top: 20px;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -79,6 +83,10 @@ body {
   border-color: transparent transparent #5cb85c;
   border-image: initial;
   border-bottom: 8px solid #5cb85c;
+}
+
+.quantity-text{
+  width: 177px;
 }
 
 .btn-close {
@@ -262,6 +270,28 @@ input[type=number] {
     background-image: linear-gradient(to right, #ffd89b, #19547b)
 
 }
+
+.update-status{
+  border-radius: 15px;
+  color: white;
+  background-color: #a637a0;
+  height:50px;
+}
+
+.update-status:hover {
+  background-color: #d16bcc;
+
+}
+
+.all-order-heading {
+  color: white;
+}
+
+.all-order-heading-div{
+    background-color: #3f9153;
+    border: 2px solid #76ab83;
+}
+
 
 
 .card-container {

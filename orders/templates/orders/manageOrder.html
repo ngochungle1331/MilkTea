@@ -7,24 +7,24 @@
 {% block main %}
 <div class="container-md cart p-0 mt-3 mb-3">
   <div class="card">
-    <div class="card-header pt-3 pb-3 pl-0 pr-0">
-      <h3 class="text-center">Tất cả đơn hàng</h3>
+    <div class="card-header pt-3 pb-3 pl-0 pr-0 all-order-heading-div">
+      <h3 class="text-center all-order-heading">Tất cả đơn hàng</h3>
     </div>
     <div class="card-body">
       <div class="row">
         {% for id, order in orders.items %}
         <div class="col-7 border border-info p-0">
-          <h5 class="text-center m-0"><b>Đơn hàng số {{ id }}</b> - {{ order.total_price }} VND ({{ order.item_count }} sản phẩm)</h5>
+          <h5 class="text-center m-0 order-heading pt-4 pb-4"><b>Đơn hàng số {{ id }}</b> - {{ order.total_price }} VND ({{ order.item_count }} sản phẩm)</h5>
           <ul class="list-group m-1">
             {% for item in order.ordered_products %}
-            <li class="list-group-item p-0">
+            <li class="list-group-item p-0 pt-2 pb-2">
               <a href="/item/{{item.id}}"><h6 class="m-0"><b>- {{ item.name }}</b></h6></a>
-              <p class="m-0 pl-2">Số lượng: {{ item.quantity }} | Giá: €{{ item.price }} (€{{ item.basic_price }}/{{ item.unit }}) | {{ item.user_request }}</p>
+              <p class="m-0 pl-2">Số lượng: {{ item.quantity }} | Giá: {{ item.price }} VND ({{ item.basic_price }} VND/{{ item.unit }}) | {{ item.user_request }}</p>
             </li>
             {% endfor %}
           </ul>
-          <div class="reciever_info ml-2 mb-2">
-            <h6 class="text-center mb-0"><b>Customer info</b></h6>
+          <div class="reciever_info ml-2 mb-2 pt-4 pb-4">
+            <h6 class="text-center mb-0"><b>Thông tin khách hàng</b></h6>
             <p class="m-0">Tên khách hàng: {{ order.customer_name }}</p>
             <p class="m-0">SĐT: {{ order.customer_mobile }}</p>
             <p class="m-0">Địa chỉ giao hàng: {{ order.shipping_address }}</p>
@@ -53,7 +53,7 @@
                   </div>
                 </div>
                 <div class="form-group m-0">
-                  <label for="status" class="m-0" mt-2>Trạng thái đơn hàng</label>
+                  <label for="status" class="m-0 padding-top-20px" >Trạng thái đơn hàng</label>
                   <div class="d-flex justify-content-center">
                     <select id='{{order.order_id}}' class="choose_tag selectpicker price-select" data-width="135px" name="status" data-style="btn-success">
                       <option value="Pending">Chờ xác nhận</option>
@@ -73,7 +73,7 @@
                       </script>
                   </div>
                 </div>
-                <button class="button-confirm mt-1" type="submit">Cập nhật trạng thái</button>
+                <button class="button-confirm mt-1 update-status" type="submit">Cập nhật trạng thái</button>
               </form>
             {% endif %}
           </div>

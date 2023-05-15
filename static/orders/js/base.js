@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var items = cart["items"];
     var total_price = cart["total_price"];
     document.querySelectorAll(".total-price").forEach(el => {
-      el.innerHTML = `<b>€${total_price.toFixed(2)}</b>`;
+      el.innerHTML = `<b>${total_price} VND</b>`;
     });
 
     if (items.length === 0) {
@@ -72,18 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
       cart, items, item, total_price = update_localStorage("quantity_plus", element, cart, items, item);
       data_element.setAttribute("data-item", JSON.stringify(item));
       document.querySelectorAll(".total-price").forEach(el => {
-        el.innerHTML = `<b>€${total_price.toFixed(2)}</b>`;
+        el.innerHTML = `<b>${total_price} VND</b>`;
       });
-      item_field.querySelector(".item-price").innerHTML = `<b>€${item["price"].toFixed(2)}</b>`;
+      item_field.querySelector(".item-price").innerHTML = `<b>${item["price"]} VND</b>`;
     } else if (this.getAttribute("data-type") === "minus") {
       if (current_quantity > 1) {
         quantity_el.value = current_quantity - 1;
         cart, items, item, total_price = update_localStorage("quantity_minus", element, cart, items, item);
         data_element.setAttribute("data-item", JSON.stringify(item));
         document.querySelectorAll(".total-price").forEach(el => {
-          el.innerHTML = `<b>€${total_price.toFixed(2)}</b>`;
+          el.innerHTML = `<b>${total_price} VND</b>`;
         });
-        item_field.querySelector(".item-price").innerHTML = `<b>€${item["price"].toFixed(2)}</b>`;
+        item_field.querySelector(".item-price").innerHTML = `<b>${item["price"]} VND</b>`;
       } else {
         update_localStorage("remove", element, cart, items, item);
         item_field.parentElement.removeChild(item_field);
@@ -106,7 +106,7 @@ function update_localStorage(type, element, cart, items, item) {
         items.splice(i, 1);
         cart["total_price"] -= item["price"];
         document.querySelectorAll(".total-price").forEach(el => {
-          el.innerHTML = `<b>€${cart["total_price"].toFixed(2)}</b>`;
+          el.innerHTML = `<b>${cart["total_price"]} VND</b>`;
         });
       } else if (type === "quantity_plus") {
         // make sure quantity in item is a number
@@ -136,13 +136,13 @@ function renderEmptyCart() {
   const markup = `
     <div class="text-center pt-3 pb-3" id="empty">
       <img style="width: 100px; height: 100px;" src="https://cdn.pixabay.com/photo/2014/04/02/17/03/shopping-cart-307772_960_720.png">
-      <h5 class="pt-2">Opps! Your card is empty</h5>
+      <h5 class="pt-2">Giỏ hàng của bạn trống</h5>
     </div>
   `;
   const el = document.querySelector(".shoppingCart");
   el.insertAdjacentHTML('beforeend', markup);
   document.querySelectorAll(".total-price").forEach(el => {
-    el.innerHTML = `€0.00`;
+    el.innerHTML = `0 VND`;
   });
   document.getElementById("empty-cart").style.display = 'none';
   document.getElementById("PCheckout").style.display = 'none';
@@ -159,14 +159,14 @@ function renderItem(item, item_raw) {
             <a href="/item/${item["id"]}"><h5 class="m-0"><b>${item["name"]}</b></h5></a>
           </div>
           <div class="ml-1 pl-3 item-price">
-            <p class="m-0"><b>€${item["price"].toFixed(2)}</b></p>
+            <p class="m-0"><b>${item["price"]} VND</b></p>
           </div>
           <div class="ml-1 pl-3 mr-2 remove-item">
             <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
           </div>
         </div>
         <div class="ml-3 d-flex align-items-center">
-          <h6 class="pr-3"><b>Quantity:</b></h6>
+          <h6 class="pr-3 quantity-text"><b>Số lượng:</b></h6>
           <div class="ml-3 d-flex ">
             <button class="quantity_click quantity_left btn btn-outline-dark" data-type="minus">-</button>
             <input class="quantity quantity_middle btn-outline-dark" type="number" value="${item["quantity"]}" style="width: 30px;" min=1>
@@ -174,7 +174,7 @@ function renderItem(item, item_raw) {
           </div>
         </div>
         <div class="ml-3 d-flex mt-1 align-items-center">
-          <h6 class="pr-2"><b>Customer needs:</b></h6>
+          <h6 class="pr-2"><b>Yêu cầu của khách hàng:</b></h6>
           <div>
             <p class="mb-2">${item["notice"]}</p>
           </div>
