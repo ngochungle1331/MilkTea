@@ -46,7 +46,7 @@
         <ul class="list-group m-1">
           {% for item in order.ordered_products %}
           <li class="list-group-item p-0">
-            <a href="/item/${item["id"]}"><h6 class="m-0"><b>- {{ item.name }}</b></h6></a>
+            <a href="/item/{{item.id}}"><h6 class="m-0"><b>- {{ item.name }}</b></h6></a>
             <p class="m-0 pl-2">Số lượng: {{ item.quantity }} | Giá: {{ item.price }}k ({{ item.basic_price }}k/{{ item.unit }}) | {{ item.user_request }}</p>
           </li>
           {% endfor %}
