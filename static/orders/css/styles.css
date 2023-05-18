@@ -61,6 +61,15 @@ body {
   padding-top: 6px;
 }
 
+.active-menu {
+  background-color: rgb(140, 162, 221);
+  border-radius: 4px;
+}
+
+.active-menu .btn-link {
+  color: rgb(236, 8, 160);
+}
+
 .popup-notification {
   position: absolute;
   width: 300px;

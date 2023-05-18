@@ -63,12 +63,12 @@
                 <i class="fas fa-list fa-lg"></i> <span class="md-hidden"> Chọn loại</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/"><span class="mb-1 btn-link">Tất cả sản phẩm</span></a>
-                <a class="dropdown-item" href="/category/TRÀ SỮA"><span class="mb-1 btn-link">Trà sữa</span></a>
-                <a class="dropdown-item" href="/category/SODA"><span class="mb-1 btn-link">Soda</span></a>
-                <a class="dropdown-item" href="/category/FRESH MILK"><span class="mb-1 btn-link">Sữa tươi</span></a>
-                <a class="dropdown-item" href="/category/FRUIT TEA"><span class="mb-1 btn-link">Trà trái cây</span></a>
-                <a class="dropdown-item" href="/category/OTHER DRINK"><span class="mb-1 btn-link">Thức uống khác</span></a>
+                <a class="dropdown-item" name='all' href="/"><span class="mb-1 btn-link">Tất cả sản phẩm</span></a>
+                <a class="dropdown-item" name='TRÀ SỮA' href="/category/TRÀ SỮA"><span class="mb-1 btn-link">Trà sữa</span></a>
+                <a class="dropdown-item" name='SODA' href="/category/SODA"><span class="mb-1 btn-link">Soda</span></a>
+                <a class="dropdown-item" name='FRESH MILK' href="/category/FRESH MILK"><span class="mb-1 btn-link">Sữa tươi</span></a>
+                <a class="dropdown-item" name='FRUIT TEA' href="/category/FRUIT TEA"><span class="mb-1 btn-link">Trà trái cây</span></a>
+                <a class="dropdown-item" name='OTHER DRINK' href="/category/OTHER DRINK"><span class="mb-1 btn-link">Thức uống khác</span></a>
               </div>
             </li>
             {% if user.is_superuser %}
@@ -340,6 +340,20 @@
         $('#signupModal').modal('toggle');
       }
     });
+    {% for key, value in data.items %}
+      {% with category=key %}
+      const category = "{{ category }}"
+      {% endwith %}
+    {% endfor %}
+    console.log(category);
+    const menu = document.querySelector('.dropdown-menu');
+    console.log(menu.children[0].name);
+    for (let i = 0; i < menu.children.length; i++) {
+      if (menu.children[i].name == category) {
+        menu.children[i].classList.add('active-menu');
+        break;
+      }
+    }   
   </script>
 </body>
 
