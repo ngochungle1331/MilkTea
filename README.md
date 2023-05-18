@@ -7,7 +7,7 @@ We built this web application using Django, SQLite3, Javascript and Bootstrap.
 - Images in this app serve for non-profit/business purpose.
 
 ### Homepage	
-![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/homepage.JPG)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/homepage.PNG)
 
 
 ## Features of the website for administrators (used easily by any non-technical admins):
@@ -16,7 +16,7 @@ We built this web application using Django, SQLite3, Javascript and Bootstrap.
 - Edit the existing items (changing info or/and picture) via the web application
 
 ### Add and Edit a product
-![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/newProduct.JPG)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/newProduct.PNG)
 
 
 ## Features of the website for user (suits the eyes of the customers):
