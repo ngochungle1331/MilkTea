@@ -4,10 +4,10 @@ import datetime
 
 # Create your models here.
 STATUS = (
-    ('Pending', 'Pending'),
-    ('Prepared', 'Prepared'),
-    ('Shipping', 'Shipping'),
-    ('Delivered', 'Delivered')
+    ('Chờ xác nhận', 'Chờ xác nhận'),
+    ('Đã chuẩn bị', 'Đã chuẩn bị'),
+    ('Đang giao', 'Đang giao'),
+    ('Đã giao', 'Đã giao')
 )
 
 CATEGORIES = (
@@ -65,5 +65,5 @@ class Order(models.Model):
     expected_time_request = models.TextField(blank=True)
     # decide by administrators
     delivery_time = models.CharField(max_length=32, blank=True, null=True)
-    status = models.CharField(max_length=32, choices=STATUS, default='Pending')
+    status = models.CharField(max_length=32, choices=STATUS, default='Chờ xác nhận')
 

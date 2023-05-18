@@ -141,8 +141,9 @@ def checkout_view(request):
         shipping_address = request.POST["address"] + ", " + request.POST["country"] + ", " + request.POST["zipcode"] + " " + request.POST["state"]
         email = user.email
         expected_time_request = request.POST["expected_time_request"]
+        ordered_time = datetime.now()
         #initialize the order
-        order = Order.objects.create(user=request.user, name=reciever, mobile=mobile, shipping_address=shipping_address, email=email, expected_time_request=expected_time_request, total_price=total_price)
+        order = Order.objects.create(user=request.user, name=reciever, mobile=mobile, shipping_address=shipping_address, email=email, ordered_time=ordered_time, expected_time_request=expected_time_request, total_price=total_price)
         #list_item_order =
         for item in items:
             # get Product-type data of the item

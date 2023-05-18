@@ -35,7 +35,7 @@ Trang chủ
                 <div class="flex-grow-1">
                   <h6>Giá: {{ item.price }} VND / {{ item.unit }}</h6>
                 </div>
-                <div class="">
+                <div class="btnBuy">
                   <a href="#" class="btn btn-sm btn-info float-right"><i class="fas fa-cart-plus fa-lg"></i> Mua</a>
                 </div>  
               </div>
@@ -50,6 +50,13 @@ Trang chủ
 
 <script>
   AOS.init();
+  const listbtnBuys = document.querySelectorAll('.btnBuy');
+  {% if user.is_superuser %}
+    console.log('superuser');
+    for (let i = 0; i < listbtnBuys.length; i++) {
+      listbtnBuys[i].setAttribute('hidden', true);
+    }
+  {% endif %}
 </script>
 
 {% endblock %}

@@ -91,5 +91,10 @@
 
   </div>
 </div>
-
+<script>
+  const customerNeeds = document.querySelector('.customer-needs');
+  {% if user.is_superuser %}
+    customerNeeds.setAttribute('style', 'display: none;');
+  {% endif %}
+</script>
 {% endblock %}
