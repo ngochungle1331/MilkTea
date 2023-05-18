@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $(".shoppingCart-footer").on("click", "#empty-cart", function() {
     // ask user to confirm before remove all items
-    const confirmation = confirm("Are you sure to make empty your cart?");
+    const confirmation = confirm("Bạn có chắc làm trống giỏ hàng không ?");
     if (confirmation) {
       element.innerHTML = '';
       renderEmptyCart();
