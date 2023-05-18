@@ -27,10 +27,13 @@ We built this web application using Django, SQLite3, Javascript and Bootstrap.
 - Checkout and view order info
 
 ### Login
-![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/login.JPG)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/login.PNG)
 
 ### Register
-![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/register.JPG)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/register.PNG)
 
 ### Shopping cart
-![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/cart.JPG)
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/cart.PNG)
+
+### Checkout
+![](https://github.com/ngochungle1331/MilkTea/blob/main/git_image/checkout.PNG)
