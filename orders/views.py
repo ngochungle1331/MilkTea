@@ -132,7 +132,7 @@ def checkout_view(request):
         data = json.loads(order_data)
         # check if data is empty again before further processing
         if not data["items"]:
-            messages.info(request, "Sorry, something wrong! Try it again")
+            messages.info(request, "Xin lỗi ! Đã có lỗi xảy ra , vui lòng thử lại")
             return render(request, "orders/checkout.html")
         items = data["items"]
         total_price = data["total_price"]
@@ -164,7 +164,7 @@ def checkout_view(request):
         orders_list = list_detail_orders(Order.objects.filter(user=request.user))
         context = {
             "orders": orders_list,
-            "message": "Thank you! We have received your order"
+            "message": "Cảm ơn bạn ! Chúng tôi đã nhận được đơn của bạn"
         }
         return render(request, 'orders/history.html', context)
     else:
@@ -217,10 +217,10 @@ def manageProduct_view(request):
                     product = Product.objects.get(pk=int(product_id))
                     product.image = product_image
                     product.save()
-                messages.success(request, "Edited successfully")
+                messages.success(request, "Sửa đổi thành công")
             else:
                 Product.objects.create(name=productName, category=category, price=price_basic, unit=unit, availability=availablity, quantity=quantity, description_short=description_short, description_long=description_long, image=product_image)
-                messages.success(request, "Uploaded successfully")
+                messages.success(request, "Tải lên thành công")
         all_products = {}
         product_data = Product.objects.all()
         for category in categories:
@@ -255,7 +255,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
         else:
-            messages.error(request, "Invalid credentials")
+            messages.error(request, "Thông tin không hợp lệ")
     return HttpResponseRedirect(reverse("index"))
 
 def register_view(request):
@@ -268,9 +268,9 @@ def register_view(request):
         last_name = request.POST["last_name"]
         email = request.POST["email"]
         if not username or not password or not confirmation or not first_name or not last_name or not email:
-            messages.info(request, "Invalid Inputs")
+            messages.info(request, "Giá trị nhập vào không hợp lệ")
         if password != confirmation:
-            messages.info(request, "Passwords Not Match")
+            messages.info(request, "Mật khẩu không đúng")
         user_exist = User.objects.filter(username=username).exists()
         if not user_exist:
             user = User.objects.create_user(username, email, password, first_name=first_name, last_name=last_name)
@@ -279,7 +279,7 @@ def register_view(request):
             # send message to user email
             login(request, user)
         elif user_exist:
-            messages.info(request, "Username Already Exists")
+            messages.info(request, "Tên tài khoản đã tồn tại")
     return HttpResponseRedirect(reverse("index"))
 
 

@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ice_amount = request.querySelector(".ice-amount").firstChild.selectedOptions[0].value;
     const other_needs = request.querySelector(".needs-other").value;
     if (ice_type == "no ice") {
-      notice = "The drink with no ice. " + other_needs;
+      notice = "Đồ uống không đá. " + other_needs;
     } else {
       notice = ice_type + " (" + ice_amount + "). " + other_needs;
     }
